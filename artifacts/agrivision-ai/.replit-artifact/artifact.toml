@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "AgriVision AI"
+description = "An offline-first crop health assistant prototype for small-scale farmers in Uttar Pradesh, designed around local disease detection, yield impact guidance, and Hindi-first interactions."
+version = "1.0.0"
+id = "artifacts/agrivision-ai"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23634
+
+[services.development]
+run = "pnpm --filter @workspace/agrivision-ai run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/agrivision-ai", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/agrivision-ai/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23634"
+BASE_PATH = "/"
