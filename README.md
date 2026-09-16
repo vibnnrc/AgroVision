@@ -1,3 +1,7 @@
+# AgriVision AI
+
+Live demo: [Open AgriVision AI](https://agrovisionai-kappa.vercel.app )
+
 # AgriVision AI — Project Report
 
 System workflow, AI diagnosis, technology stack, implementation statistics, and deployment architecture.
